@@ -1,0 +1,10 @@
+.my-nav {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    gap: 10px;
+}
+
+.my-nav a:active {
+    font-weight: 800;
+}
