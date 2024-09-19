@@ -1,26 +1,23 @@
 import { useContext } from "react";
 import Context from "../../context/Context";
+import ListNotes from "../../components/ListNotes";
 
 export default function Home() {
   const { notes } = useContext(Context);
   return (
-    <>
-      <div className="container">
-        <h2>To do list</h2>
-        <p>Notes:</p>
-
-        {
-            notes.length > 0 
-            ? notes.map((element, index) => (
-                <div key={index}>
-                    <p>{element}</p>
-                    <button>remove</button>
-                    <button>edit</button>
-                </div>
-            )) 
-            : <h2>void</h2>
-        }
+    <div className="list-notes">
+      <div className="container-notes">
+        <div className="header-notes">
+          <h2>Notes</h2>
+        </div>
+        <div className="body-notes">
+          {notes.length > 0 ? (
+            <ListNotes data={notes} />
+          ) : (
+            <span>Nothing yet</span>
+          )}
+        </div>
       </div>
-    </>
+    </div>
   );
 }

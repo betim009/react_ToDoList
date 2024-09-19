@@ -1,0 +1,25 @@
+footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #000000d7;
+}
+
+.active {
+    font-weight: 800;
+}

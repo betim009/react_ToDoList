@@ -4,24 +4,48 @@ import "./form.css";
 
 export default function Form() {
   const { notes, setNotes } = useContext(Context);
-  const [note, setNote] = useState("");
+  const [note, setNote] = useState({
+    title: "",
+    note: "",
+    data: "",
+  });
+
+  function handleChange({ target }) {
+    const { name, value } = target;
+
+    setNote((prev) => ({
+      ...prev,
+      [name]: value,
+      data: new Date(),
+    }));
+  }
 
   function handleClick(e) {
     e.preventDefault();
     setNotes([...notes, note]);
-    setNote("");
+    setNote({ title: "", note: "", data: "" });
   }
 
   return (
     <form className="my-create">
       <div className="form-body">
-        <label htmlFor="note">Create notes</label>
+        <label htmlFor="title">Title Note</label>
+        <input
+          type="text"
+          value={note.title}
+          name="title"
+          id="title"
+          onChange={handleChange}
+        />
+
+        <label htmlFor="note">Your note</label>
         <textarea
           type="text"
           placeholder="note"
           id="note"
-          value={note}
-          onChange={({ target: { value } }) => setNote(value)}
+          name="note"
+          value={note.note}
+          onChange={handleChange}
         />
       </div>
 
