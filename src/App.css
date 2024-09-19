@@ -1,18 +1,26 @@
 * {
   font-family: sans-serif;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #3c3c3c;
 }
 
 .container {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #ededed;
+  height: 800px;
+  background-color: white;
+  width: 400px;
+  border-radius: 10px;
 }
 
-.my-btn {
+button {
   background-color: rgb(56, 56, 63);
   font-weight: 500;
   display: block;
@@ -24,16 +32,3 @@
   margin: 5px 0 5px 0;
 }
 
-.my-create {
-  max-width: 400px;
-  padding: 10px;
-  min-height: 300px;
-  border-radius: 10px;
-  background-color: white;
-}
-
-.my-create textarea,
-label {
-  display: block;
-  margin: 5px 0 5px 0;
-}
