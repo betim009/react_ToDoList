@@ -32,6 +32,7 @@ export default function Form() {
         <label htmlFor="title">Title Note</label>
         <input
           type="text"
+          placeholder="title"
           value={note.title}
           name="title"
           id="title"
