@@ -6,7 +6,10 @@ export default function MyModal({ info }) {
       <dialog ref={info.modal}>
         <div className="header">{info.title}</div>
 
-        <div className="body">...</div>
+        <div className="body">
+          <input type="email" name="" placeholder="change value note" />
+          <button>Change</button>
+        </div>
 
         <div className="footer">
           <button onClick={() => info.modal.current.close()}>close x </button>
