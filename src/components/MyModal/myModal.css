@@ -1,0 +1,42 @@
+dialog {
+    height: 400px;
+    width: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog {
+    & .header {
+        height: 10%;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    & .body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80%;
+    }
+
+    & .footer {
+        height: 10%;
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+        background-color: blue;
+    }
+}
+
+

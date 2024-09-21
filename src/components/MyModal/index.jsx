@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./myModal.css";
 
 export default function MyModal({ info }) {
   return (
@@ -7,11 +8,16 @@ export default function MyModal({ info }) {
         <div className="header">{info.title}</div>
 
         <div className="body">
-          <input type="email" name="" placeholder="change value note" />
-          <button>Change</button>
+          <textarea
+            className="text-modal"
+            type="email"
+            name=""
+            placeholder="change value note"
+          />
         </div>
 
         <div className="footer">
+          <button>Change</button>
           <button onClick={() => info.modal.current.close()}>close x </button>
         </div>
       </dialog>
