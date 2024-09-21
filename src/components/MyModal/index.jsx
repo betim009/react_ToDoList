@@ -17,8 +17,11 @@ export default function MyModal({ info }) {
         </div>
 
         <div className="footer">
-          <button>Change</button>
-          <button onClick={() => info.modal.current.close()}>close x </button>
+          <i className="bi bi-check-circle-fill i-modal"></i>
+          <i
+            onClick={() => info.modal.current.close()}
+            className="bi bi-x-circle-fill i-modal"
+          ></i>
         </div>
       </dialog>
     </>

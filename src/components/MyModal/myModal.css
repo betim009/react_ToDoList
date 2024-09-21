@@ -15,12 +15,23 @@ dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.text-modal {
+    width: 250px;
+    height: 200px;
+    border: solid 2.1px black;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
 dialog {
     & .header {
         height: 10%;
-        background-color: blue;
+        background-color: #ededed;
         display: flex;
         justify-content: center;
+        align-items: center;
+        font-weight: 500;
     }
 
     & .body {
@@ -35,8 +46,20 @@ dialog {
         display: flex;
         justify-content: space-around;
         gap: 10px;
-        background-color: blue;
+        background-color: #ededed;
+        align-items: center;
     }
+}
+
+.i-modal {
+    font-size: 30px !important;
+    color: rgb(119, 119, 138);
+}
+
+.i-modal:hover {
+    cursor: pointer;
+    zoom: 1.1;
+    color: black;
 }
 
 

@@ -9,6 +9,7 @@ export default function Form() {
     note: "",
     data: "",
   });
+  const [span, setSpan] = useState(false);
 
   function handleChange({ target }) {
     const { name, value } = target;
@@ -22,6 +23,13 @@ export default function Form() {
 
   function handleClick(e) {
     e.preventDefault();
+
+    if (note.title.length === 0 || note.note.length === 0) {
+      return setSpan(true);
+    } else {
+      setSpan(false);
+    }
+
     setNotes([...notes, note]);
     setNote({ title: "", note: "", data: "" });
   }
@@ -38,9 +46,11 @@ export default function Form() {
           id="title"
           onChange={handleChange}
         />
+        {span ? <span className="empity">empity fields</span> : null}
 
         <label htmlFor="note">Your note</label>
         <textarea
+          className="text-area"
           type="text"
           placeholder="note"
           id="note"
@@ -48,6 +58,7 @@ export default function Form() {
           value={note.note}
           onChange={handleChange}
         />
+        {span ? <span className="empity">empity fields</span> : null}
       </div>
 
       <div className="form-footer">

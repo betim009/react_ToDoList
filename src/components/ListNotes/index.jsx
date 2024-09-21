@@ -13,19 +13,19 @@ export default function ListNotes({ data }) {
         <div key={index} className="my-note">
           <p>{element.title}</p>
           <i
-            className="bi bi-x-octagon"
+            className="bi bi-x-octagon i-home"
             onClick={() => {
               removeNote(element);
             }}
           ></i>
           <i
-            className="bi bi-pencil"
+            className="bi bi-pencil i-home"
             onClick={() => myModal.current.showModal()}
           ></i>
           <MyModal
             info={{
               modal: myModal,
-              title: "Editar",
+              title: "Change",
               element,
             }}
           />

@@ -64,7 +64,7 @@ button {
   font-size: 20px;
 }
 
-.bi:hover {
+.i-home:hover {
   cursor: pointer;
   zoom: 1.1;
   color: red;
