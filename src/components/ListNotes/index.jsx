@@ -1,11 +1,17 @@
 import PropTypes from "prop-types";
 import { useRemoveNote } from "../../hooks/useRemove";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import MyModal from "../MyModal";
 
 export default function ListNotes({ data }) {
   const removeNote = useRemoveNote();
   const myModal = useRef(null);
+  const [element, setElement] = useState(null);
+
+  const handleOpenModal = (e) => {
+    myModal.current.showModal();
+    setElement(e);
+  };
 
   return (
     <div>
@@ -18,19 +24,16 @@ export default function ListNotes({ data }) {
               removeNote(element);
             }}
           ></i>
-          <i
-            className="bi bi-pencil i-home"
-            onClick={() => myModal.current.showModal()}
-          ></i>
-          <MyModal
-            info={{
-              modal: myModal,
-              title: "Change",
-              element,
-            }}
-          />
+          <i className="bi bi-pencil i-home" onClick={() => handleOpenModal(element)}></i>
         </div>
       ))}
+      <MyModal
+        info={{
+          modal: myModal,
+          title: "Change",
+          element,
+        }}
+      />
     </div>
   );
 }
